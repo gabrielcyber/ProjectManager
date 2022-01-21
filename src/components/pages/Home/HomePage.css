@@ -1,0 +1,31 @@
+.home_container {
+    width: 100%;
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_container h1 {
+    margin-bottom: 1.5em;
+    font-family: 'Segoe UI';
+    font-size: 2.5em;
+}
+
+.home_container h1 span {
+    padding: 8px;
+    border-radius: 18px;
+    background-color: #222;
+    color: #ffbb33;
+}
+
+.home_container p {
+    margin-bottom: 1.5em;
+    color: #7b7b7b;
+}
+
+.home_container img {
+    width: 350px;
+    margin-block: 4em;
+}

@@ -1,0 +1,20 @@
+.btn_container {
+    margin-top: 2.5em;
+    text-align: center;
+}
+
+.btn {
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 6px;
+    background-color: #222;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    padding-inline: 2.25em;
+    color: #ffbb33;
+    transition-delay: 0.2s;
+}
