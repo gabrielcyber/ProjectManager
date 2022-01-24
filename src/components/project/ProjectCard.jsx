@@ -16,7 +16,7 @@ function ProjectCard({id, name, budget, category, handleRemove}) {
                 <Link to="/">
                     <BsPencil /> Editar
                 </Link>
-                <button>
+                <button onClick={() => handleRemove(id)}>
                     <BsTrashFill /> Excluir
                 </button>
             </div>

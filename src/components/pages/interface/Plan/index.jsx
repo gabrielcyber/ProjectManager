@@ -11,6 +11,7 @@ export default function Projects() {
 
     const [projects, setProjects] = useState([]);
     const [removeLoading, setRemoveLoading] = useState(false);
+    const [projectMessage, setProjectMessage] = useState();
     
     const locationState = useLocation().state;
     let msg = '';
@@ -33,6 +34,21 @@ export default function Projects() {
         }, 500)
     }, [])
 
+    const removeProject = (id) => {
+        fetch(`http://localhost:5000/projects/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((resp) => resp.json())
+        .then(() => {
+            setProjects(projects.filter((project) => project.id !== id))
+            setProjectMessage('Projeto removido com sucesso!');
+        })
+        .catch((err) => console.log(err))
+    }
+
     return (
         <div className={styles.project_container}>
             <div className={styles.title_container}>
@@ -40,6 +56,7 @@ export default function Projects() {
                 <LinkButton to="/newproject" value="Criar Projeto" />
             </div>
             {msg && <Message type="success" msg={msg} />}
+            {projectMessage && <Message type="success" msg={projectMessage} />}
             <Container customClass="start">
                 {!removeLoading && <Loading />}
                 {removeLoading && projects.length === 0 &&
@@ -50,7 +67,8 @@ export default function Projects() {
                     name={project.name}
                     budget={project.budget}
                     category={project.category.name}
-                    key={project.id} />)}
+                    key={project.id}
+                    handleRemove={removeProject} />)}
             </Container>
         </div>
     )
