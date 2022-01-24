@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Input from '../include/template/form/Input';
-import Select from '../include/template/form/Select';
-import SubmitButton from '../include/template/form/SubmitButton';
+import Input from '../layout/template/form/Input';
+import Select from '../layout/template/form/Select';
+import SubmitButton from '../layout/template/form/SubmitButton';
 import styles from './ProjectForm.module.css';
 
 function ProjectForm({handleSubmit, projectData, btnText}) {
@@ -16,13 +16,14 @@ function ProjectForm({handleSubmit, projectData, btnText}) {
                 'Content-Type': 'application/json'
             }
         })
-        .then((resposta) => resposta.json())
+        .then((resp) => resp.json())
         .then((data) => {
             setCategories(data)})
         .catch((err) => console.log(err))}, [])
     
     function submit(e) {
         e.preventDefault();
+        //active or disable sending
         handleSubmit(project);
     }
 

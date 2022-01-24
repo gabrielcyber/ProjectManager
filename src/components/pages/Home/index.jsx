@@ -1,4 +1,4 @@
-import LinkButton from '../../include/LinkButton';
+import LinkButton from '../../layout/template/utils/LinkButton';
 import './HomePage.css';
 
 export default function Home() {

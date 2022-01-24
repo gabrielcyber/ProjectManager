@@ -1,0 +1,77 @@
+.projectCard {
+    width: 25%;
+    padding: 1em;
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.projectCard h4 {
+    padding: 0.5em;
+    margin-bottom: 1.5em;
+    background-color: #000;
+    color: #ffbb33;
+    font-size: 1.3em;
+}
+
+.projectCard p {
+    margin-bottom: 1em;
+    color: #7a7a7a;
+}
+
+.projectCard p span {
+    font-weight: bold;
+}
+
+.category_text span {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: #ccc;
+    display: inline-block;
+}
+
+.category_text .infra {
+    background-color: #ffaebc;
+}
+
+.category_text .desenvolvimento {
+    background-color: #a0e7e5;
+}
+
+.category_text .design {
+    background-color: #b4f8c8;
+}
+
+.category_text .planejamento {
+    background-color: #fbe7c6;
+}
+
+.projectCard_actions {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projectCard_actions a,
+.projectCard_actions button {
+    width: 90px;
+    padding: 1em;
+    border: 1px solid #222;
+    background-color: #fff;
+    color: #222;
+    font-size: .9em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projectCard_actions a:hover,
+.projectCard_actions button:hover {
+    background-color: #222;
+    color: #ffbb33;
+}

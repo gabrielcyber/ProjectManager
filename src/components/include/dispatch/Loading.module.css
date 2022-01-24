@@ -1,0 +1,9 @@
+.loader_container {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+.loader_container .loader {
+    width: 60px;
+}

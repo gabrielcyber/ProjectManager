@@ -9,7 +9,7 @@ import Company from './components/pages/interface/Company';
 import NewProject from './components/pages/interface/NewProject';
 
 /* layout */
-import Container from './components/layout/Container'
+import Container from './components/layout/Content/Container';
 import NavBar from './components/layout/NavBar';
 import Footer from './components/layout/Footer';
 
