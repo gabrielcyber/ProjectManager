@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Input from '../layout/template/form/Input';
 import Select from '../layout/template/form/Select';
 import SubmitButton from '../layout/template/form/SubmitButton';
 import styles from './ProjectForm.module.css';
 
-function ProjectForm({handleSubmit, projectData, btnText}) {
+function ProjectForm({handleSubmit, btnText, projectData}) {
 
     const [categories, setCategories] = useState([]);
     const [project, setProject] = useState(projectData || {});
@@ -21,23 +21,21 @@ function ProjectForm({handleSubmit, projectData, btnText}) {
             setCategories(data)})
         .catch((err) => console.log(err))}, [])
     
-    function submit(e) {
+    const submit = (e) => {
         e.preventDefault();
         //active or disable sending
         handleSubmit(project);
     }
 
-    function handleChange(e) {
-        setProject({...project, [e.target.name]: e.target.value});
-    }
+    const handleChange = (e) => setProject({...project, [e.target.name]: e.target.value});
 
-    function handleCategory(e) {
+    const handleCategory = (e) => {
         setProject({...project,
             category: {
                 id: e.target.value,
                 name: e.target.options[e.target.selectedIndex].text
             }
-        });
+        })
     }
 
     return (
@@ -47,20 +45,22 @@ function ProjectForm({handleSubmit, projectData, btnText}) {
                 text="Nome do projeto:"
                 name="name"
                 placeholder="Insira o nome do projeto"
+                value={project.name}
                 handleOnChange={handleChange} />
             <Input
                 type="number"
                 text="Orçamento do projeto:"
                 name="budget"
                 placeholder="Insira o orçamento total"
+                value={project.budget}
                 handleOnChange={handleChange} />
             <Select
                 name="category_id"
                 text="Selecione a categoria"
                 options={categories}
-                handleOnChange={handleCategory}
-                value={project.category ? project.category.id : ''} />
-            <SubmitButton value={btnText}/>
+                value={project.category ? project.category.id : ''}
+                handleOnChange={handleCategory} />
+            <SubmitButton value={btnText} />
         </form>
     )
 }

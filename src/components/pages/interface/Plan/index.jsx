@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Container from '../../../layout/Content/Container';
 import LinkButton from '../../../layout/template/utils/LinkButton';
@@ -43,7 +43,7 @@ export default function Projects() {
         })
         .then((resp) => resp.json())
         .then(() => {
-            setProjects(projects.filter((project) => project.id !== id))
+            setProjects(projects.filter((project) => project.id !== id));
             setProjectMessage('Projeto removido com sucesso!');
         })
         .catch((err) => console.log(err))
